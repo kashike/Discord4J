@@ -88,7 +88,7 @@ class InteractionOperations implements RestInteraction, InteractionResponse, Gui
     @Override
     public FollowupInteractionHandler acknowledge() {
         InteractionResponseData responseData = InteractionResponseData.builder()
-                .type(InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE.getValue())
+                .type(InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
                 .data(InteractionApplicationCommandCallbackData.builder().build())
                 .build();
         return new FollowupInteractionHandler(responseData, __ -> Mono.empty());
@@ -97,7 +97,7 @@ class InteractionOperations implements RestInteraction, InteractionResponse, Gui
     @Override
     public FollowupInteractionHandler acknowledgeEphemeral() {
         InteractionResponseData responseData = InteractionResponseData.builder()
-                .type(InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE.getValue())
+                .type(InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE)
                 .data(InteractionApplicationCommandCallbackData.builder()
                         .flags(1 << 6)
                         .build())
@@ -123,7 +123,7 @@ class InteractionOperations implements RestInteraction, InteractionResponse, Gui
     @Override
     public FollowupInteractionHandler reply(InteractionApplicationCommandCallbackData callbackData) {
         InteractionResponseData responseData = InteractionResponseData.builder()
-                .type(InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE.getValue())
+                .type(InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE)
                 .data(callbackData)
                 .build();
         return new FollowupInteractionHandler(responseData, __ -> Mono.empty());

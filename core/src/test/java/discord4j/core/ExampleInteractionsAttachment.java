@@ -51,7 +51,7 @@ public class ExampleInteractionsAttachment {
                                     .addOption(ApplicationCommandOptionData.builder()
                                             .name("attachment")
                                             .description("a file to be included in the report")
-                                            .type(ApplicationCommandOption.Type.ATTACHMENT.getValue())
+                                            .type(ApplicationCommandOption.Type.ATTACHMENT)
                                             .build())
                                     .build()
                     );

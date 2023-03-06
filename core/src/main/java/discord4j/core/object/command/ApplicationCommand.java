@@ -22,6 +22,7 @@ import discord4j.common.util.Snowflake;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.object.DiscordObject;
 import discord4j.discordjson.json.ApplicationCommandData;
+import discord4j.discordjson.json.ApplicationCommandRequest;
 import discord4j.discordjson.possible.Possible;
 import discord4j.rest.util.PermissionSet;
 
@@ -202,7 +203,7 @@ public class ApplicationCommand implements DiscordObject {
      * @see <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-types">
      * Application Command Type</a>
      */
-    public enum Type {
+    public enum Type implements ApplicationCommandRequest.Type {
         UNKNOWN(-1),
         CHAT_INPUT(1),
         USER(2),
@@ -220,6 +221,16 @@ public class ApplicationCommand implements DiscordObject {
          */
         Type(final int value) {
             this.value = value;
+        }
+
+        /**
+         * Gets the underlying value as represented by Discord.
+         *
+         * @return The underlying value as represented by Discord.
+         */
+        @Override
+        public int getAsInt() {
+            return value;
         }
 
         /**

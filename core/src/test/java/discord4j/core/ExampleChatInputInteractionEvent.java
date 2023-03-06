@@ -52,7 +52,7 @@ public class ExampleChatInputInteractionEvent {
                 .addOption(ApplicationCommandOptionData.builder()
                         .name("digits")
                         .description("Number of digits (1-20)")
-                        .type(ApplicationCommandOption.Type.INTEGER.getValue())
+                        .type(ApplicationCommandOption.Type.INTEGER)
                         .required(false)
                         .build())
                 .build();

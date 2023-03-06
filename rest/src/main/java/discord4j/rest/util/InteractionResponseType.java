@@ -17,7 +17,9 @@
 
 package discord4j.rest.util;
 
-public enum InteractionResponseType {
+import discord4j.discordjson.json.InteractionResponseData;
+
+public enum InteractionResponseType implements InteractionResponseData.Type {
     /**
      * Unknown type
      */
@@ -67,6 +69,16 @@ public enum InteractionResponseType {
      */
     InteractionResponseType(final int value) {
         this.value = value;
+    }
+
+    /**
+     * Gets the underlying value as represented by Discord.
+     *
+     * @return The underlying value as represented by Discord.
+     */
+    @Override
+    public int getAsInt() {
+        return value;
     }
 
     /**

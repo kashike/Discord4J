@@ -245,7 +245,7 @@ public class ApplicationCommandOption implements DiscordObject {
      * @see <a href="https://discord.com/developers/docs/interactions/slash-commands#applicationcommandoptiontype">
      * Application Command Option Type</a>
      */
-    public enum Type {
+    public enum Type implements ApplicationCommandOptionData.Type {
         UNKNOWN(-1),
         SUB_COMMAND(1),
         SUB_COMMAND_GROUP(2),
@@ -271,6 +271,16 @@ public class ApplicationCommandOption implements DiscordObject {
          */
         Type(final int value) {
             this.value = value;
+        }
+
+        /**
+         * Gets the underlying value as represented by Discord.
+         *
+         * @return The underlying value as represented by Discord.
+         */
+        @Override
+        public int getAsInt() {
+            return value;
         }
 
         /**

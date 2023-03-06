@@ -68,11 +68,11 @@ public class ExampleInteractions {
                             .build();
                     ApplicationCommandRequest userInfo = ApplicationCommandRequest.builder()
                             .name(USER_COMMAND_NAME)
-                            .type(ApplicationCommand.Type.USER.getValue())
+                            .type(ApplicationCommand.Type.USER)
                             .build();
                     ApplicationCommandRequest approve = ApplicationCommandRequest.builder()
                             .name(MESSAGE_COMMAND_NAME)
-                            .type(ApplicationCommand.Type.MESSAGE.getValue())
+                            .type(ApplicationCommand.Type.MESSAGE)
                             .build();
                     List<ApplicationCommandRequest> commands = Arrays.asList(example, userInfo, approve);
 
